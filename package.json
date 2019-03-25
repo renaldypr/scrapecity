@@ -1,0 +1,25 @@
+{
+  "name": "scrapecity",
+  "version": "1.0.0",
+  "description": "This is the repo I make to code along Wes Bos's Node.js Scraper videos",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node -r esm index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renaldypr/scrapecity.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renaldypr/scrapecity/issues"
+  },
+  "homepage": "https://github.com/renaldypr/scrapecity#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "esm": "^3.2.18"
+  }
+}
