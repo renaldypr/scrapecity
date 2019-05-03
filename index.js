@@ -1,18 +1,22 @@
+import express from 'express';
 import {
-  getHTML,
-  getTwitterFollowers,
-  getInstagramFollowers
+  getInstagramCount,
+  getTwitterCount
 } from './lib/scraper';
 
-async function go() {
-  const iPromise = getHTML('https://www.instagram.com/renaldyp/');
-  const tPromise = getHTML('https://twitter.com/renaldyp');
-  const [instagramHTML, twitterHTML] = await Promise.all([iPromise, tPromise]);
-  const instagramCount = await getInstagramFollowers(instagramHTML);
-  const twCount = await getTwitterFollowers(twitterHTML);
-  console.log(
-    `You have ${twCount} Twitter followers and ${instagramCount} Instagram followers`
-  );
-}
+const app = express();
 
-go();
+app.get('/scrape', async (req, res, next) => {
+  console.log('Scraping!');
+  const [iCount, tCount] = await Promise.all([
+    getInstagramCount(),
+    getTwitterCount()
+  ]);
+  console.log(iCount, tCount);
+  res.json({iCount, tCount});
+});
+
+app.listen(2093, deets =>
+  console.log(deets)
+  // console.log(`Example App running on port ${deets.PORT}`)
+);
