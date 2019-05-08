@@ -4,7 +4,7 @@
   "description": "This is the repo I make to code along Wes Bos's Node.js Scraper videos",
   "main": "index.js",
   "scripts": {
-    "dev": "node -r esm index.js"
+    "dev": "nodemon -r esm index.js --ignore db.json"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,11 @@
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "esm": "^3.2.18",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "lowdb": "^1.0.0",
+    "node-cron": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }
